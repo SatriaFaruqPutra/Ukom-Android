@@ -18,7 +18,6 @@ return new class extends Migration
         $table->smallInteger('status'); 
         $table->date('tanggal');
         $table->decimal('total_harga');
-        $table->longText('keterangan')->nullable();
         $table->timestamps();
     });
 }

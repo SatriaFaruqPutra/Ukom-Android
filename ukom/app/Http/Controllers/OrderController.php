@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\layanan;
+use App\Models\pelanggan;
 use App\Models\order;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,7 @@ class OrderController extends Controller
         $request->validate([
             'pelanggan_id' => 'required|exists:pelanggan,id',
             'layanan_id'   => 'required|exists:layanan,id',
-            'tanggal'      => 'required|date', // Validasi tanggal
+            'tanggal'      => 'required|date',
         ]);
 
         // Ambil harga layanan dari database

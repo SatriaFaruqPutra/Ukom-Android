@@ -12,7 +12,11 @@ class order extends Model
     protected $table = 'order';
 
     protected $fillable = [
-        'pelanggan_id', 'layanan_id', 'status', 'tanggal', 'total_harga', 'keterangan'
+        'pelanggan_id', 
+        'layanan_id', 
+        'status', 
+        'tanggal', 
+        'total_harga', 
     ];
 
     // Relasi ke pelanggan
@@ -25,5 +29,10 @@ class order extends Model
     public function layanan()
     {
         return $this->belongsTo(Layanan::class, 'layanan_id');
+    }
+
+    public function pembayaran()
+    {
+        return $this->hasOne(Pembayaran::class, 'order_id');
     }
 }
